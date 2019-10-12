@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  go-dev:
+    container_name: go-dev
+    build:
+      context: .
+      dockerfile: go.dockerfile
+    tty: true
+    volumes:
+      - ./code:/go/app
