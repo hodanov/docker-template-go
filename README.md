@@ -2,7 +2,7 @@
 
 This is the Golang dev-environment.
 
-This sample app is using the following technologies:
+The environment is using the following technologies:
 
 - Golang: 1.13-alpine
 - gore...REPL
@@ -13,7 +13,7 @@ This sample app is using the following technologies:
 
 ## Requirements
 
-The app requires the following to run:
+This requires the following to run:
 
 - Docker
 - Docker Compose
