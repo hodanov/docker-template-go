@@ -1,7 +1,9 @@
 FROM golang:1.13-alpine
 
-# ENV GO111MODULE on
-WORKDIR /go/app
+ARG GITHUB_USER_NAME
+ENV GITHUB_USER_NAME $GITHUB_USER_NAME
+
+WORKDIR /go/src/github.com/${GITHUB_USER_NAME}
 
 RUN apk --no-cache update \
     && apk add --no-cache git \
@@ -15,4 +17,8 @@ RUN apk --no-cache update \
     # Linter
     && go get golang.org/x/lint/golint \
     # Hot reload
-    && go get github.com/oxequa/realize
+    && go get github.com/oxequa/realize \
+    # Gorilla mux
+    && go get github.com/gorilla/mux \
+    # Gin-Gonic
+    && go get github.com/gin-gonic/gin

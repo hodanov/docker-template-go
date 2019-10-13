@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: go.dockerfile
+      args:
+        - GITHUB_USER_NAME=$GITHUB_USER_NAME
     tty: true
     volumes:
-      - ./code:/go/app
+      - ./code:/go/src/github.com/$GITHUB_USER_NAME
