@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  go-dev:
+  go:
     container_name: go-dev
     build:
       context: .
@@ -11,3 +11,20 @@ services:
     tty: true
     volumes:
       - ./code:/go/src/github.com/$GITHUB_USER_NAME
+    ports:
+      - 4000:4000
+
+  mysql:
+    container_name: go-dev-mysql
+    build:
+      context: .
+      dockerfile: mysql.dockerfile
+      args:
+        - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+        - MYSQL_DATABASE=$MYSQL_DATABASE
+    command: --default-authentication-plugin=mysql_native_password
+    #     volumes:
+    #       - db_data:/var/lib/mysql
+    #
+    # volumes:
+    #   db_data
