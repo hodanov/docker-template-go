@@ -21,4 +21,6 @@ RUN apk --no-cache update \
     # Gorilla mux
     && go get github.com/gorilla/mux \
     # Gin-Gonic
-    && go get github.com/gin-gonic/gin
+    && go get github.com/gin-gonic/gin \
+    # MySQL driver
+    && go get github.com/go-sql-driver/mysql
