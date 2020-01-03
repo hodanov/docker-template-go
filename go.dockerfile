@@ -1,9 +1,6 @@
 FROM golang:1.13-alpine
 
-ARG GITHUB_USER_NAME
-ENV GITHUB_USER_NAME $GITHUB_USER_NAME
-
-WORKDIR /go/src/github.com/${GITHUB_USER_NAME}
+WORKDIR /go/src/
 
 RUN apk --no-cache update \
     && apk add --no-cache git \
