@@ -26,6 +26,8 @@ RUN apk --no-cache update \
     && go get github.com/go-sql-driver/mysql \
     # Postgres driver
     && go get github.com/lib/pq \
+    # semaphore
+    && go get golang.org/x/sync/semaphore \
     # gRPC
     # https://grpc.io/docs/quickstart/go/
     && go get google.golang.org/grpc \
