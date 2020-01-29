@@ -1,9 +1,9 @@
 CREATE TABLE snippets (
-    id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     content TEXT NOT NULL,
-    created DATETIME NOT NULL,
-    expires DATETIME NOT NULL
+    created TIMESTAMP NOT NULL,
+    expires TIMESTAMP NOT NULL
 );
 
 CREATE INDEX idx_snippets_created ON snippets(created);
