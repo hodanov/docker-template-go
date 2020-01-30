@@ -6,3 +6,12 @@ CREATE TABLE snippets (
 );
 
 CREATE INDEX idx_snippets_created ON snippets(created);
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_users_created ON users(created);
