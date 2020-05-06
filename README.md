@@ -4,7 +4,7 @@ This is the Golang dev-environment.
 
 The environment is using the following technologies:
 
-- Golang: 1.13-alpine
+- Go: 1.14-alpine
 - gore...REPL
 - golint...linter
 - realize...hot reload
