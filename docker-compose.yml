@@ -18,6 +18,7 @@ services:
     ports:
       - 4000:4000
       - 6060:6060
+      - 8080:8080
 
   mysql:
     container_name: go-dev-mysql
