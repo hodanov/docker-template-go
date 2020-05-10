@@ -1,1 +1,4 @@
-code/
+code/*
+!code/app/
+code/app/*
+!code/app/.vscode/
