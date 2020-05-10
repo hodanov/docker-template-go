@@ -1,4 +1,4 @@
-FROM golang:1.14-alpine
+FROM golang:1
 
 ENV PROTOBUF_VERSION='3.11.2'
 ENV PROTOBUF_URL="https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-all-${PROTOBUF_VERSION}.tar.gz"
@@ -16,8 +16,9 @@ ENV POSTGRES_SERVER $POSTGRES_SERVER
 
 WORKDIR /go/src/
 
-RUN apk --no-cache update \
-    && apk add --no-cache git \
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
+    && apt-get -y install git openssh-client less iproute2 procps lsb-release \
     # REPL
     && go get github.com/motemen/gore/cmd/gore \
     # Completion on gore and highlight on gore
