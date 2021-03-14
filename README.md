@@ -2,14 +2,11 @@
 
 This is the Golang dev-environment.
 
-The environment is using the following technologies:
+The environment is using the following tools:
 
-- Go: 1.14-alpine
-- gore...REPL
-- golint...linter
-- realize...hot reload
-- gorilla mux...router
-- gin-gonic...web framework
+- Go: > 1.16
+- gopls
+- dlv
 
 ## Requirements
 
@@ -33,10 +30,10 @@ The directory structure is the below.
 ├── .env
 ├── README.md
 ├── docker-compose.yml
-└── go.dockerfile
+└── df-go.dockerfile
 ```
 
-2. After cloning, modify the `GITHUB_USER_NAME` in `.env` file.  
+2. After cloning, modify some environment in `.env` file.
 
 3. Execute `docker-compose up`
 
@@ -44,9 +41,9 @@ The directory structure is the below.
 docker-compose up -d
 ```
 
-Docker container will run and the `code/` directory will be made.
+Docker container will run and the `code/app` directory will be made.
 
-The directory is mounted `/go/src/github.com/${GITHUB_USER_NAME}/` directory in a container.
+The directory is mounted `/go/src/app` directory in a container.
 
 Thank you.
 
