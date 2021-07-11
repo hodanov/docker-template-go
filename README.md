@@ -45,6 +45,28 @@ Docker container will run and the `code/app` directory will be made.
 
 The directory is mounted `/go/src/app` directory in a container.
 
+4. How to debug Go with VSCode
+
+Add the setting of VSCode to .vscode/launch.json.
+
+ex.
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}",
+            "showLog": true
+        }
+    ]
+}
+```
+
 Thank you.
 
 ## Author
