@@ -4,7 +4,7 @@ This is the Golang dev-environment.
 
 The environment is using the following tools:
 
-- Go: > 1.16
+- Go: > 1.20
 - gopls
 - dlv
 
@@ -56,7 +56,7 @@ ex.
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "debug",
+            "name": "Debug",
             "type": "go",
             "request": "launch",
             "mode": "debug",
