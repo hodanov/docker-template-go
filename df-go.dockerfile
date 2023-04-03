@@ -1,4 +1,4 @@
-FROM golang:1.16.2
+FROM golang:1.20.2-alpine3.17
 
 ARG POSTGRES_DB
 ARG POSTGRES_USER
@@ -13,13 +13,11 @@ ENV POSTGRES_SERVER $POSTGRES_SERVER
 
 WORKDIR /go/src/
 
-RUN apt-get update \
-    # Get all golang default packages
-    && go get golang.org/x/tools/cmd/... \
+RUN apk add --no-cache git build-base tzdata \
     # Get debugging tools
-    && go get golang.org/x/tools/gopls \
-    && go get github.com/go-delve/delve/cmd/dlv \
+    && go install golang.org/x/tools/gopls@latest \
+    && go install github.com/go-delve/delve/cmd/dlv@latest
     # MySQL driver
-    && go get github.com/go-sql-driver/mysql \
+    # && go install github.com/go-sql-driver/mysql@latest \
     # Postgres driver
-    && go get github.com/lib/pq
+    # && go install github.com/lib/pq@latest
